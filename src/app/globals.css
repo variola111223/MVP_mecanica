@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 20% 98%;
+    --card: 220 15% 6%;
+    --card-foreground: 210 20% 98%;
+    --popover: 220 15% 6%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 220 10% 12%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 220 10% 15%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 220 10% 12%;
+    --accent-foreground: 187 100% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 10% 15%;
+    --input: 220 10% 12%;
+    --ring: 187 100% 50%;
+    --chart-1: 187 100% 50%;
+    --chart-2: 142 76% 55%;
+    --chart-3: 45 93% 58%;
+    --chart-4: 24 95% 53%;
+    --chart-5: 217 91% 60%;
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-deep-steel text-foreground font-sans antialiased;
+    background-image: 
+      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px),
+      linear-gradient(to bottom, #0A0C10, #0F1015);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-xl border border-white/[0.08] shadow-glass;
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-electric-cyan/30 hover:shadow-cyan-glow-sm;
+  }
+  
+  .tech-input {
+    @apply bg-deep-steel/80 border border-white/10 text-white placeholder:text-white/30 focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan/50 transition-all duration-200;
+  }
+  
+  .cyan-button {
+    @apply bg-electric-cyan text-deep-steel font-semibold hover:bg-electric-cyan/90 hover:shadow-cyan-glow transition-all duration-200;
+  }
+  
+  .tech-label {
+    @apply text-sm font-medium text-white/70 uppercase tracking-wider;
+  }
+  
+  .mono-text {
+    @apply font-mono text-electric-cyan;
+  }
+  
+  .status-completed {
+    @apply bg-neon-green/20 text-neon-green border border-neon-green/30;
+  }
+  
+  .status-in-progress {
+    @apply bg-warning-yellow/20 text-warning-yellow border border-warning-yellow/30;
+  }
+  
+  .status-pending {
+    @apply bg-pending-orange/20 text-pending-orange border border-pending-orange/30;
+  }
+  
+  .tech-grid-bg {
+    background-image: 
+      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
